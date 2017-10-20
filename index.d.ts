@@ -241,9 +241,24 @@ declare module "gdax" {
         on(event: 'error', eventHandler: (err) => void);
         on(event: 'open', eventHandler: () => void);
         on(event: 'close', eventHandler: () => void);
+        on(event: 'orderbook-changed', eventHandler: () => void);
+        
+        connect();
     }
 
     export class OrderbookSync extends WebsocketClient {
+        books: {[key: string]: Orderbook};
         constructor(productIds: string[], apiUrl: string, wsUrl: string, config: any)
+    }
+    
+    export class Orderbook {
+        state(): {asks:OrderbookOrder[], bids: OrderbookOrder[]};
+    }
+    
+    export type OrderbookOrder = {
+        id: any,
+        side: 'buy' | 'sell',
+        price: any,
+        size: any,
     }
 }
