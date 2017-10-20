@@ -242,4 +242,8 @@ declare module "gdax" {
         on(event: 'open', eventHandler: () => void);
         on(event: 'close', eventHandler: () => void);
     }
+
+    export class OrderbookSync extends WebsocketClient {
+        constructor(productIds: string[], apiUrl: string, wsUrl: string, config: any)
+    }
 }
