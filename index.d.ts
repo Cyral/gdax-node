@@ -248,7 +248,7 @@ declare module "gdax" {
 
     export class OrderbookSync extends WebsocketClient {
         books: {[key: string]: Orderbook};
-        constructor(productIds: string[], apiUrl: string, wsUrl: string, config: any)
+        constructor(productIds: string[], apiUrl: string, wsUrl: string, authenticatedClient: AuthenticatedClient, config?: {heartbeat?: boolean})
     }
     
     export class Orderbook {
