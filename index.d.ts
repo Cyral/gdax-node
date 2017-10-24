@@ -265,6 +265,7 @@ declare module "gdax" {
     
     export class Orderbook {
         state(): {asks:OrderbookOrder[], bids: OrderbookOrder[]};
+        getBest(): {bid, ask}
     }
     
     export type OrderbookOrder = {
