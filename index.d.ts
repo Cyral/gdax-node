@@ -245,6 +245,18 @@ declare module "gdax" {
         
         connect();
     }
+    
+    export class FIXClient {
+        constructor(productIds: string[], apiUrl: string,authenticatedClient: AuthenticatedClient);
+        on(event: 'message', eventHandler: (data) => void);
+        on(event: 'error', eventHandler: (err) => void);
+        on(event: 'open', eventHandler: () => void);
+        on(event: 'close', eventHandler: () => void);
+        
+        buy(params: BuyOrderParams);
+        sell(params: SellOrderParams);
+        cancelOrder(request_id: string, client_oid: string ,order_id: string);
+    }
 
     export class OrderbookSync extends WebsocketClient {
         books: {[key: string]: Orderbook};
