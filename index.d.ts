@@ -162,8 +162,8 @@ declare module "gdax" {
         getTime(): Promise<any>;
     }
 
-    export class AuthenticatedClient {
-        constructor(key: string, b64secret: string, passphrase: string, apiURI: string);
+    export class AuthenticatedClient extends PublicClient {
+        constructor(productIds: string[], key: string, b64secret: string, passphrase: string, apiURI: string);
 
         getCoinbaseAccounts(callback: callback<CoinbaseAccount[]>)
         getCoinbaseAccounts(): Promise<CoinbaseAccount[]>;
@@ -244,6 +244,7 @@ declare module "gdax" {
         on(event: 'orderbook-changed', eventHandler: () => void);
         
         connect();
+        disconnect();
     }
     
     export class FIXClient {
@@ -253,6 +254,7 @@ declare module "gdax" {
         on(event: 'open', eventHandler: () => void);
         on(event: 'close', eventHandler: () => void);
         
+        logout();
         buy(params: BuyOrderParams);
         sell(params: SellOrderParams);
         cancelOrder(request_id: string, client_oid: string ,order_id: string);
