@@ -1,8 +1,8 @@
-# GDAX [![CircleCI](https://circleci.com/gh/coinbase/gdax-node.svg?style=svg)](https://circleci.com/gh/coinbase/gdax-node) [![npm version](https://badge.fury.io/js/gdax.svg)](https://badge.fury.io/js/gdax)
+# GDAX Node
 
-The official Node.js library for Coinbase's [GDAX API](https://docs.gdax.com/).
+This is my fork of gdax-node, which adds support for their Financial Information Exchange (FIX) API, enabling high-speed trading.
 
-*Note: this library may be subtly broken or buggy. The code is released under
+*Note: this library may be subtly broken or buggy. The FIX API may no longer be up to date. The code is released under
 the MIT License – please take the following message to heart:*
 
 > THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
